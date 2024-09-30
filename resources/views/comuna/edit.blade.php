@@ -14,7 +14,7 @@
     <div class = "Container">
     <h1>Edit Comuna</h1>
     <form method="POST" action="{{route('comunas.update', ['comuna'=>$comuna->comu_codi])}}">
-    @method('put')
+      @method('put')
         @csrf
         <div class="mb-3">
           <label for="codigo" class="form-label">Id</label>
