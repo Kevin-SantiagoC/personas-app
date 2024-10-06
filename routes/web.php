@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\PaisController;
 
 
 Route::get('/', function () {
@@ -51,5 +52,6 @@ Route::put('/departamentos/{departamento}',[DepartamentoController::class, 'upda
 
 Route::get('/departamentos/{departamento}/edit',[DepartamentoController::class, 'edit'])->name('departamentos.edit');
 
+//paises
 
-
+Route::get('/paises',[PaisController::class, 'index'])->name('paises.index');
