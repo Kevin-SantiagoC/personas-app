@@ -35,7 +35,7 @@
             </select>
               <div class="mt-3">
             <button type="submit" class="btn btn-primary">Save</button>
-            <a href="{{route('pais.index')}}" class="btn btn-warning">Cancel</a>
+            <a href="{{route('paises.index')}}" class="btn btn-warning">Cancel</a>
               </div>
           </form>
       </div>

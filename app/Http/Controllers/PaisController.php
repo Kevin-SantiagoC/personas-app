@@ -75,7 +75,10 @@ class PaisController extends Controller
     public function update(Request $request, string $id)
     {
           
-          $pais = Pais::find($id);
+        $pais = Pais::find($id);
+        $pais->pais_nomb = $request->name;
+        $pais->pais_capi = $request->code;
+        $pais->save();
 
         $paises = DB::table('tb_pais')
         ->join('tb_municipio','tb_pais.pais_capi','=','tb_municipio.muni_codi')
