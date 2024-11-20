@@ -18,7 +18,7 @@ class MunicipioController extends Controller
         ->join('tb_departamento', 'tb_municipio.depa_codi','=' ,'tb_departamento.depa_codi')
         ->select('tb_municipio.*', 'tb_departamento.depa_nomb')
         ->get();
-        return view('municipio.index',['municipios' => $municipios]);
+        return json_encode(['municipios'=>$municipios]);
     }
 
     /**
@@ -31,7 +31,7 @@ class MunicipioController extends Controller
         $municipio->muni_nomb = $request->muni_nomb;
         $municipio->depa_codi = $request->depa_codi;
         $municipio->save();
-        return view('municipio.index',['municipios' => $municipios]);
+        return json_encode(['municipio'=>$municipio]);
 
     }
 
@@ -88,7 +88,7 @@ class MunicipioController extends Controller
         $municipio->muni_nomb = $request->muni_nomb;
         $municipio->depa_codi = $request->depa_codi;
         $municipio->save();
-        return view('municipio.index',['municipios' => $municipios]);
+        return json_encode(['municipio'=>$municipio]);
     }
 
     /**
@@ -107,7 +107,7 @@ class MunicipioController extends Controller
         ->join('tb_departamento', 'tb_municipio.depa_codi','=' ,'tb_departamento.depa_codi')
         ->select('tb_municipio.*', 'tb_departamento.depa_nomb')
         ->get();
-        return view('municipio.index',['municipios' => $municipios]);
+        return json_encode(['municipios'=>$municipios, 'success'=>true]);
 
     }
 }
